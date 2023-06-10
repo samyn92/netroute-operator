@@ -1,0 +1,5 @@
+.vscode
+*.lock
+__pycache__
+sandbox.py
+.notes

@@ -1,0 +1,22 @@
+---
+apiVersion: samy.nitsche.io/v1
+kind: NetRoute
+metadata:
+  name: netroute-example-11
+spec:
+  network: 192.168.100.0/24
+  gateway: 10.1.0.1
+  targetNamespace: default
+  targetPod: busybox-test
+  prune: True
+---
+apiVersion: samy.nitsche.io/v1
+kind: NetRoute
+metadata:
+  name: netroute-example-21
+spec:
+  network: 192.168.150.0/24
+  gateway: 10.1.0.1
+  targetNamespace: default
+  targetPod:  busybox-test
+  prune: True
