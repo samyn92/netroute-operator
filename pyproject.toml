@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "route-manager"
-version = "0.1.2"
+version = "0.1.0-alpha"
 description = "A Kubernetes Operator to add routes on containers / pods"
 authors = ["Samy Nitsche <samy@nitsche.io>"]
 
@@ -9,7 +9,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11.0"
 kopf = "^1.32.1"
 kubernetes = "^17.17.0"
 

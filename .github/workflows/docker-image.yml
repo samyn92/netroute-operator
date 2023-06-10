@@ -23,4 +23,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/netroute-operator:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/netroute-operator:0.1.0-alpha
