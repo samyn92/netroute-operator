@@ -9,7 +9,6 @@ This can be helpful in environments where you need to use Multus for support of 
 - Verifies the state of network routes (```route -n```) in each container and reconciles if required.
   * Supports adding of IPv4 Routes
   * Supports adding of IPv6 Routes
-  * Supports adding of VPP Routes 
 
 ## Installation & Development
 
