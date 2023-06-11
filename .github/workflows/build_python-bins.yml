@@ -13,3 +13,5 @@ jobs:
         uses: snok/install-poetry@v1
       - name: Build project
         run: poetry build
+        with:
+          context: .
