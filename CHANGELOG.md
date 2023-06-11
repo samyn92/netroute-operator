@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/samyn92/netroute-operator/compare/1.0.10...1.1.0) (2023-06-11)
+
+
+### Bug Fixes
+
+* **docker-image-ci:** edited push selector ([262dfa8](https://github.com/samyn92/netroute-operator/commit/262dfa83f556c51a234779021224ea3a5cb99cfe))
+
+
+### Features
+
+* **release-ci:** added ssh key auth ([6015180](https://github.com/samyn92/netroute-operator/commit/60151809c904686a8f067687c8d80dfc69726804))
+
 ## [1.0.10](https://github.com/samyn92/netroute-operator/compare/1.0.9...1.0.10) (2023-06-11)
 
 
