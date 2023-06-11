@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/samyn92/netroute-operator/compare/1.0.4...1.0.5) (2023-06-11)
+
+
+### Bug Fixes
+
+* **docker-image-ci:** fixed indent ([fd8a7c7](https://github.com/samyn92/netroute-operator/commit/fd8a7c7eb2297e8a070efa132b59f66b0a3d3ea7))
+* **releaserc:** edited assets ([1be197c](https://github.com/samyn92/netroute-operator/commit/1be197c036ad376dd2959afc37e28a1733b24e17))
+
 ## [1.0.4](https://github.com/samyn92/netroute-operator/compare/1.0.3...1.0.4) (2023-06-11)
 
 
