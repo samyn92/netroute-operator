@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/samyn92/netroute-operator/compare/1.1.0...1.1.1) (2023-06-11)
+
+
+### Bug Fixes
+
+* **release-ci:** edited token ref ([c8e07ff](https://github.com/samyn92/netroute-operator/commit/c8e07ff85b58921fa0cfae73c81039f656c57db8))
+* **release-ci:** fixed ref ([9bedb54](https://github.com/samyn92/netroute-operator/commit/9bedb54ddbdeb1926366ddf1a853f2a32b933f67))
+
 # [1.1.0](https://github.com/samyn92/netroute-operator/compare/1.0.10...1.1.0) (2023-06-11)
 
 
