@@ -22,3 +22,5 @@ ENV VIRTUAL_ENV=/app/.venv \
 COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 
 COPY src ./src
+
+CMD python3 -m kopf run src/server.py
