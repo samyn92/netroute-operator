@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nr-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nr-operator
+  template:
+    metadata:
+      labels:
+        app: nr-operator
+    spec:
+      serviceAccountName: nr-operator-account
+      containers:
+      - name: nr-operator
+        image:  samynitsche/netroute-operator:0.1.0-alpha
+        env:
+        - name: USE_INCLUSTER
+          value: "true"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"

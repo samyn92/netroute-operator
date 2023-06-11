@@ -7,7 +7,7 @@ spec:
   network: 192.168.100.0/24
   gateway: 10.1.0.1
   targetNamespace: default
-  targetPod: busybox-test
+  targetPod: busybox-547fd6f9cd-6g4cs
   prune: True
 ---
 apiVersion: samy.nitsche.io/v1
@@ -18,5 +18,5 @@ spec:
   network: 192.168.150.0/24
   gateway: 10.1.0.1
   targetNamespace: default
-  targetPod:  busybox-test
+  targetPod:  busybox-547fd6f9cd-6msk6
   prune: True
