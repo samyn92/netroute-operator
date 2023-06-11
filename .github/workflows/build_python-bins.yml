@@ -1,0 +1,15 @@
+name: Python CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Build project
+        run: poetry build
