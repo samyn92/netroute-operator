@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ssh-key: "${{ secrets.COMMIT_KEY }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -29,5 +29,5 @@ jobs:
         run: npm install @semantic-release/github @semantic-release/changelog @google/semantic-release-replace-plugin @semantic-release/git -D
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.COMMIT_KEY }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_BOT }}
         run: npx semantic-release
