@@ -1,26 +1,36 @@
+
+## Introduction
+
+This is a Kubernetes operator written in Python, designed to reconcile network routes on containers. This operator ensures all network routes are correctly configured and in a desired state within your Kubernetes environment.
+
+This can be helpful in environments where you need to use Multus for support of multiple network interfaces on pods.
 ## Features
 
-* Simple, but powerful:
-  * A full-featured Kubernetes operator managing Pod configuration definitions
-  * Marshalling of resources' data to the handlers' kwargs.
-  * Marshalling of handlers' results to the resources' statuses.
-  * Publishing of logging messages as Kubernetes events linked to the resources.
-* Supports Pod configuration definitions
+- Verifies the state of network routes (```route -n```) in each container and reconciles if required.
   * Supports adding of IPv4 Routes
   * Supports adding of IPv6 Routes
-  * Supports adding of VPP Routes
+  * Supports adding of VPP Routes 
 
-## Poetry
-* ```poetry install``` -- install packages from pyproject.toml / poetry.lock
-* ```poetry add {package_name}``` -- adds package to virtual environment
-* ```poetry add -D {package_name}``` -- adds package to virtual environment (as development addon)
-* ```poetry show --tree``` -- show packages with dependencies
+## Installation & Development
 
+### Pre-requisites
+
+- Python 3.11+
+- Kubernetes cluster
+
+Clone the repository to your local machine:
+```bash
+$ git clone https://github.com/samyn92/netroute-operator
+```
+
+Install the required Python packages:
+```bash
+$ poetry install
+```
 
 ## Usage
 
 Deploy ```route-manager``` to the Kubernetes Cluster
-
 ```bash
 $ kubectl apply -f kubernetes/crd.yaml
 $ kubectl apply -f kubernetes/pod-route-manager.py
@@ -72,14 +82,11 @@ NAME                  READY   ROUTE                          APPLIED TO         
 netroute-example-11   True    192.168.100.0/24 -> 10.1.0.1   Pod(default, busybox-test)   19s
 netroute-example-21   True    192.168.150.0/24 -> 10.1.0.1   Pod(default, busybox-test)   19s
 
-$ kubectl exec -it busybox-test -- /bin/bash
-/ # route -n
+$ kubectl exec -it busybox-test -- route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 0.0.0.0         10.1.0.1        0.0.0.0         UG    0      0        0 eth0
 10.1.0.0        0.0.0.0         255.255.0.0     U     0      0        0 eth0
 192.168.100.0   10.1.0.1        255.255.255.0   UG    0      0        0 eth0
 192.168.150.0   10.1.0.1        255.255.255.0   UG    0      0        0 eth0
-/ # 
-
 ```

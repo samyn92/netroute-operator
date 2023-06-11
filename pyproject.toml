@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "route-manager"
+name = "nr-operator"
 version = "0.1.0-alpha"
-description = "A Kubernetes Operator to add routes on containers / pods"
+description = "A Kubernetes Operator to manage routes on containers / pods"
 authors = ["Samy Nitsche <samy@nitsche.io>"]
 
 packages = [
