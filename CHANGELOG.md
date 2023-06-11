@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/samyn92/netroute-operator/compare/1.0.3...1.0.4) (2023-06-11)
+
+
+### Bug Fixes
+
+* **docker-image-ci:** added semver ([068605c](https://github.com/samyn92/netroute-operator/commit/068605c9e843a8984ced5460ac0d799727f522f2))
+
 ## [1.0.3](https://github.com/samyn92/netroute-operator/compare/1.0.2...1.0.3) (2023-06-11)
 
 
