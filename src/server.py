@@ -2,11 +2,16 @@ import asyncio
 
 import kopf
 
-from src.controller.pod import Pod
-from src.k8s import KubernetesClient
-from src.controller.schema.route import Route, RouteExistingError, RouteMissingError
+from controller.pod import Pod
+from k8s import KubernetesClient
+from controller.schema.route import Route, RouteExistingError, RouteMissingError
 
 OBSERVED: set[list[tuple]] = set([])
+
+@kopf.on.startup()
+async def startup_fn(logger, **kwargs):
+    logger.info("netroute-operator started.. checking states")
+    #TODO: Implement state reconciliation of existing netroutes
 
 @kopf.on.create("pods")
 async def create_pod(name, namespace, logger, **kwargs):
@@ -35,17 +40,18 @@ async def create_route(spec, logger, annotations, patch, **kwargs):
 
     try:
         route = Route(network, gateway)
-        pod.add_desired_podconfig(config_key="IPV4_ROUTES", config=route)
+        pod.add_desired_routes(config=route)
     except RouteMissingError:
         logger.warning(f"New Route {network} -> {gateway} existing")
-    except: 
-        logger.error(f"New Route {network} -> {gateway} couldn't be added")
+    except Exception as e: 
+        logger.error(f"New Route {network} -> {gateway} couldn't be added!")
+        logger.error(e)
     else:
         logger.info(
             f"New Route {network} -> {gateway} successfully created on Pod {namespace} / {pod_name}"
         )
     finally:
-        logger.info(f"Current routes: {pod.desired_v4_routes}")
+        logger.debug(f"Current routes: {pod.current_routes}")
 
         return {
             "ready": str(True),
@@ -70,8 +76,8 @@ async def delete_route(spec, logger, **kwargs):
     )
     try:
         route = Route(network, gateway)
-        pod.remove_desired_podconfig(
-            config_key="IPV4_ROUTES", prune=spec["prune"], config=route
+        pod.remove_desired_routes(
+            prune=spec["prune"], config=route
         )
     except RouteMissingError:
         logger.warning(
@@ -86,4 +92,4 @@ async def delete_route(spec, logger, **kwargs):
             f"Existing Route {network} -> {gateway} successfully deleted from Pod {namespace} / {pod_name}"
         )
     finally:
-        logger.info(f"Current routes: {pod.desired_v4_routes}")
+        logger.debug(f"Current routes: {pod.current_routes}")

@@ -1,9 +1,9 @@
 import ipaddress
 from dataclasses import dataclass
 
-from src.k8s import KubernetesClient
-from src.controller.schema.route import Route, RouteExistingError, RouteMissingError
-from src.controller.pod_config import PodConfig
+from k8s import KubernetesClient
+from controller.schema.route import Route, RouteExistingError, RouteMissingError
+from controller.pod_config import PodConfig
 
 @dataclass
 class Routing(PodConfig):

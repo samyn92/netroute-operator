@@ -2,8 +2,8 @@ from __future__ import annotations
 from typing import Any
 from contextlib import suppress
 
-from src.controller.pod_config import PodConfig, PodConfigType
-from src.controller.routing import CurrentRouting, DesiredRouting
+from controller.pod_config import PodConfig, PodConfigType
+from controller.routing import CurrentRouting, DesiredRouting
 
 
 class Pod:
