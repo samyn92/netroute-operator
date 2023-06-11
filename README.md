@@ -73,7 +73,8 @@ $ kubectl get netroutes
 NAME                  READY   ROUTE                          APPLIED TO                   AGE
 netroute-example-11   True    192.168.100.0/24 -> 10.1.0.1   Pod(default, busybox-test)   19s
 netroute-example-21   True    192.168.150.0/24 -> 10.1.0.1   Pod(default, busybox-test)   19s
-
+```
+```bash
 $ kubectl exec -it busybox-test -- route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
