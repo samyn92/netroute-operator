@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/samyn92/netroute-operator/compare/1.0.0...1.0.1) (2023-06-11)
+
+
+### Bug Fixes
+
+* edited docker image CI to use ghcr ([9ec3b40](https://github.com/samyn92/netroute-operator/commit/9ec3b4066a12a06795e97ea245ab3cbb4ae12fc1))
+
 # 1.0.0 (2023-06-11)
 
 
