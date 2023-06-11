@@ -25,6 +25,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
+      - name: Install Plugins
+        run: npm install @semantic-release/github @semantic-release/changelog @google/semantic-release-replace-plugin -D
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
