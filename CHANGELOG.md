@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/samyn92/netroute-operator/compare/1.0.8...1.0.9) (2023-06-11)
+
+
+### Bug Fixes
+
+* **docker-image-ci:** edited push selector ([3ed8b33](https://github.com/samyn92/netroute-operator/commit/3ed8b338519e85d27c69fe0f6db833ff8f0122c2))
+
 ## [1.0.8](https://github.com/samyn92/netroute-operator/compare/1.0.7...1.0.8) (2023-06-11)
 
 
