@@ -28,33 +28,24 @@ Install the required Python packages:
 $ poetry install
 ```
 
+Start the Server:
+```bash
+$ poetry run kopf run src/server.py
+```
+
 ## Usage
 
-Deploy ```route-manager``` to the Kubernetes Cluster
+Deploy ```netroute-operator``` to the Kubernetes Cluster
 ```bash
-$ kubectl apply -f kubernetes/crd.yaml
-$ kubectl apply -f kubernetes/pod-route-manager.py
+$ kubectl apply -f deploy/crd.yaml
+$ kubectl apply -f deploy/rbac.yaml
+$ kubectl apply -f deploy/deployment.py
 ```
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: route-manager
-spec:
-  containers:
-  - name: app
-    image: route-manager:latest
-    imagePullPolicy: Never
-    env:
-    - name: USE_INCLUSTER
-      value: "False"
-```
-
-Following CRD can be used to add desired network routes to a ```targetPod``` and ```targetNamespace```
+Following CR can be used to add desired network routes to a ```targetPod``` running in a ```targetNamespace```
 
 ```bash
-$ kubectl apply -f kubernetes/netroute.yaml
+$ kubectl apply -f deploy/netroute.yaml
 ```
 
 ```yaml
@@ -69,9 +60,10 @@ spec:
   targetPod: busybox-test
   prune: True
 ```
+
 If ```prune``` set to ```False```, the Pod Route will not be removed (even if you delete the ressource)
 ```bash
-$ kubectl apply -f kubernetes/netroute.yaml
+$ kubectl apply -f deploy/netroute.yaml
 netroute.samy.nitsche.io/netroute-example-11 created
 netroute.samy.nitsche.io/netroute-example-21 created
 ```
