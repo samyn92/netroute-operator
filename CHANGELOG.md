@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/samyn92/netroute-operator/compare/1.0.5...1.0.6) (2023-06-11)
+
+
+### Bug Fixes
+
+* **docker-image-ci:** edited on section ([a63d88a](https://github.com/samyn92/netroute-operator/commit/a63d88a4d99762925f9940542fbe0698966016b3))
+
 ## [1.0.5](https://github.com/samyn92/netroute-operator/compare/1.0.4...1.0.5) (2023-06-11)
 
 
