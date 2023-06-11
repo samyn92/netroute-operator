@@ -1,9 +1,8 @@
 name: Docker Image CI
 
-on:  
+on:
   push:
-    tags:
-      - '*'
+    branches: [ "main" ]
 
 env:
   REGISTRY: ghcr.io
