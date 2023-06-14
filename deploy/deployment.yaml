@@ -16,7 +16,7 @@ spec:
       serviceAccountName: nr-operator-account
       containers:
       - name: nr-operator
-        image:  samynitsche/netroute-operator:0.1.0-alpha
+        image: ghcr.io/samyn92/netroute-operator:main
         env:
         - name: USE_INCLUSTER
           value: "true"
