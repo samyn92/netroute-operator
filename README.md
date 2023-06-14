@@ -60,7 +60,7 @@ spec:
   prune: True
 ```
 
-If ```prune``` set to ```False```, the Pod Route will not be removed (even if you delete the ressource)
+If ```prune``` set to ```False```, the Pod Route will not be removed (even if you delete the CR)
 ```bash
 $ kubectl apply -f deploy/netroute.yaml
 netroute.samy.nitsche.io/netroute-example-11 created
