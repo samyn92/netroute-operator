@@ -57,14 +57,12 @@ spec:
   gateway: 10.1.0.1
   targetNamespace: default
   targetPod: busybox-test
-  prune: True
 ```
 
-If ```prune``` set to ```False```, the Pod Route will not be removed (even if you delete the CR)
 ```bash
 $ kubectl apply -f deploy/netroute.yaml
-netroute.samy.nitsche.io/netroute-example-11 created
-netroute.samy.nitsche.io/netroute-example-21 created
+netroute.dev.nitsche.io/netroute-example-11 created
+netroute.dev.nitsche.io/netroute-example-21 created
 ```
 
 ```bash
@@ -74,7 +72,7 @@ netroute-example-11   True    192.168.100.0/24 -> 10.1.0.1   Pod(default, busybo
 netroute-example-21   True    192.168.150.0/24 -> 10.1.0.1   Pod(default, busybox-test)   19s
 ```
 ```bash
-$ kubectl exec -it busybox-test -- route -n
+$ kubectl exec busybox-test -- route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 0.0.0.0         10.1.0.1        0.0.0.0         UG    0      0        0 eth0
