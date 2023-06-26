@@ -17,6 +17,7 @@ spec:
       containers:
       - name: nr-operator
         image: netroute-operator:latest
+        imagePullPolicy: IfNotPresent
         env:
         - name: USE_INCLUSTER
           value: "true"
