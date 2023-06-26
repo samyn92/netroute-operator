@@ -26,9 +26,9 @@ rules:
     resources: [validatingwebhookconfigurations, mutatingwebhookconfigurations]
     verbs: [create, patch]
 
-  - apiGroups: [samy.nitsche.io]
+  - apiGroups: [dev.nitsche.io]
     resources: [netroutes]
-    verbs: [list, watch, patch]
+    verbs: [get, list, watch, patch]
 
   - apiGroups: [""]
     resources: [pods]
