@@ -1,22 +1,30 @@
 ---
-apiVersion: samy.nitsche.io/v1
+apiVersion: dev.nitsche.io/v1
 kind: NetRoute
 metadata:
   name: netroute-example-11
 spec:
-  network: 192.168.100.0/24
+  destination: 192.168.100.0/24
   gateway: 10.1.0.1
   targetNamespace: default
-  targetPod: busybox-547fd6f9cd-6g4cs
-  prune: True
+  targetPod: busybox-547fd6f9cd-jkhkt
 ---
-apiVersion: samy.nitsche.io/v1
+apiVersion: dev.nitsche.io/v1
 kind: NetRoute
 metadata:
   name: netroute-example-21
 spec:
-  network: 192.168.150.0/24
+  destination: 192.168.150.0/24
   gateway: 10.1.0.1
   targetNamespace: default
-  targetPod:  busybox-547fd6f9cd-6msk6
-  prune: True
+  targetPod: busybox-547fd6f9cd-qvfqb
+---
+apiVersion: dev.nitsche.io/v1
+kind: NetRoute
+metadata:
+  name: netroute-example-31
+spec:
+  destination: 192.168.180.0/24
+  gateway: 10.1.0.1
+  targetNamespace: default
+  targetPod: busybox-547fd6f9cd-qvfqb
