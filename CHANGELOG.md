@@ -1,3 +1,21 @@
+# [1.2.0](https://github.com/samyn92/netroute-operator/compare/1.1.0...1.2.0) (2023-06-26)
+
+
+### Bug Fixes
+
+* edited image ([d9689a0](https://github.com/samyn92/netroute-operator/commit/d9689a0ddf37c73d4c6d65a8760f42d764e54f01))
+* **release-ci:** edited token ref ([c8e07ff](https://github.com/samyn92/netroute-operator/commit/c8e07ff85b58921fa0cfae73c81039f656c57db8))
+* **release-ci:** fixed ref ([9bedb54](https://github.com/samyn92/netroute-operator/commit/9bedb54ddbdeb1926366ddf1a853f2a32b933f67))
+
+
+### Features
+
+* **controller:** refactored pod controller ([583880e](https://github.com/samyn92/netroute-operator/commit/583880e5f4f99f19f3e578bf3c8f9c4272c1f453))
+* **controller:** refactored route controller ([6a9879b](https://github.com/samyn92/netroute-operator/commit/6a9879b72abdbe6d10213dec498afa57861e1b66))
+* **crd:** updated ([c5a9da9](https://github.com/samyn92/netroute-operator/commit/c5a9da966fce94e92dd9d7819a1a6e9eacb598ed))
+* **rbac:** updated rules ([b848589](https://github.com/samyn92/netroute-operator/commit/b8485893191e9c57dd31da76cccf2e5d686ae12a))
+* refactored client & server logic ([027cd84](https://github.com/samyn92/netroute-operator/commit/027cd8404215df2df18bdc6fc336bb51c3c0ed84))
+
 ## [1.1.1](https://github.com/samyn92/netroute-operator/compare/1.1.0...1.1.1) (2023-06-11)
 
 
