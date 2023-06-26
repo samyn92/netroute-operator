@@ -1,4 +1,3 @@
-
 ## Introduction
 
 This is a Kubernetes operator written in Python, designed to reconcile network routes on containers. This operator ensures all network routes are correctly configured and in a desired state within your Kubernetes environment.
@@ -10,17 +9,21 @@ This can be helpful in environments where you need to use Multus for support of 
   * Supports adding of IPv4 Routes
   * Supports adding of IPv6 Routes
 
-## Installation (for Development)
+## Installation
 
 ### Pre-requisites
 
 - Python 3.11+
+- Docker
 - Kubernetes cluster
+
 
 Clone the repository to your local machine:
 ```bash
 $ git clone https://github.com/samyn92/netroute-operator
 ```
+
+#### Development
 
 Install the required Python packages:
 ```bash
@@ -33,6 +36,11 @@ $ poetry run kopf run src/server.py
 ```
 
 ## Usage
+
+Build the Docker Image:
+```bash
+$ docker build -t netroute-operator:latest .
+```
 
 Deploy ```netroute-operator``` to the Kubernetes Cluster
 ```bash
@@ -48,7 +56,7 @@ $ kubectl apply -f deploy/netroute.yaml
 ```
 
 ```yaml
-apiVersion: samy.nitsche.io/v1
+apiVersion: dev.nitsche.io/v1
 kind: netroute
 metadata:
   name: netroute-example-2
