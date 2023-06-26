@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/samyn92/netroute-operator/compare/1.2.0...1.3.0) (2023-06-26)
+
+
+### Features
+
+* **ci:** updated release ([9351b79](https://github.com/samyn92/netroute-operator/commit/9351b79fa45c54453a04b573ee5c5deafede7e89))
+
 # [1.2.0](https://github.com/samyn92/netroute-operator/compare/1.1.0...1.2.0) (2023-06-26)
 
 
